@@ -1,6 +1,9 @@
 ﻿using System.Data;
 using Microsoft.Data.SqlClient;
+<<<<<<< HEAD
 using Microsoft.Extensions.Configuration;
+=======
+>>>>>>> ec7c70ed4eed821ffac1aa9b43f25d5e76e4f3e5
 
 namespace apparelshop.Utilities
 {
@@ -12,6 +15,7 @@ namespace apparelshop.Utilities
         private readonly string _connectionString;
         public DbContext(IConfiguration configuration)
         {
+<<<<<<< HEAD
             // 讀取名稱為CalendarContext 的連接字串
             // 將其儲存在_connectionString 變數中
             //_configuration = configuration;
@@ -22,12 +26,24 @@ namespace apparelshop.Utilities
 
         }
 
+=======
+            _configuration = configuration;
+            // 讀取名稱為CalendarContext 的連接字串
+            // 將其儲存在_connectionString 變數中
+            _connectionString = _configuration.GetConnectionString("CalendarContext");
+        }
+        
+>>>>>>> ec7c70ed4eed821ffac1aa9b43f25d5e76e4f3e5
         // 此方法可用於建立與資料庫的連線
         // 定義一個名為CreateConnection 的公共方法
         // 透過_connectionString 建立一個新的SqlConnection 實例
         public IDbConnection CreateConnection()
+<<<<<<< HEAD
         {
             return new SqlConnection(_connectionString);
         }
+=======
+            => new SqlConnection(_connectionString);
+>>>>>>> ec7c70ed4eed821ffac1aa9b43f25d5e76e4f3e5
     }
 }

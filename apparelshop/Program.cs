@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 using apparelshop.Contracts;
 using apparelshop.Repositories;
 using apparelshop.Utilities;
 using Microsoft.Data.SqlClient;
 using System.Data;
 
+=======
+using apparelshop.Utilities;
+>>>>>>> ec7c70ed4eed821ffac1aa9b43f25d5e76e4f3e5
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +20,7 @@ builder.Services.AddSwaggerGen();
 
 // 注入一個單例的DbContext 類別來協助資料庫連線
 builder.Services.AddSingleton<DbContext>();
+<<<<<<< HEAD
 
 // 注入IDbConnection
 builder.Services.AddScoped<IDbConnection>(sp => sp.GetRequiredService<DbContext>().CreateConnection());
@@ -41,6 +46,8 @@ builder.Services.AddCors(options =>
 });
 
 
+=======
+>>>>>>> ec7c70ed4eed821ffac1aa9b43f25d5e76e4f3e5
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -56,6 +63,9 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+<<<<<<< HEAD
 app.UseCors("AllowAny");
 
+=======
+>>>>>>> ec7c70ed4eed821ffac1aa9b43f25d5e76e4f3e5
 app.Run();
